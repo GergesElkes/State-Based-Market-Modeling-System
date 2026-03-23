@@ -216,7 +216,8 @@ Custom rendering using PyQt6:
 
 ## 📸 Screenshots
 
-*(Add screenshots here of your UI for better presentation)*
+### 🖥 Main Dashboard
+![Main UI](Capture3.PNG)
 
 ---
 
