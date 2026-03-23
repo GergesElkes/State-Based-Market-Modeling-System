@@ -1,20 +1,22 @@
+this project analyzes **Pocket Option OTC market data**
+
 # 📊 Financial Market State Transition Analysis Dashboard
 
-An interactive desktop application for analyzing financial market behavior using a custom **13-state model**, built with PyQt6.
-This project processes high-frequency price data (XAUUSD) and visualizes price movement, state transitions, and timing regimes in a synchronized dashboard.
+An interactive desktop application for analyzing **OTC financial market behavior** using a custom **13-state model**, built with PyQt6.
+This project processes high-frequency **XAUUSD (OTC)** price data and visualizes price movement, state transitions, and timing regimes in a synchronized dashboard.
 
 ---
 
 ## 🚀 Overview
 
-This application transforms raw tick-level financial data into structured **market states**, enabling deeper insight into:
+This application transforms raw tick-level **OTC market data** into structured **market states**, enabling deeper insight into:
 
-* Market behavior patterns
+* Market behavior patterns in OTC conditions
 * State transition probabilities
 * Timing regimes (EARLY / CLOCK / LATE)
 * Price dynamics over time
 
-It combines **data analysis + visualization + modeling** into a single interactive tool.
+It combines **data analysis + visualization + state modeling** into a single interactive tool.
 
 ---
 
@@ -39,7 +41,7 @@ It combines **data analysis + visualization + modeling** into a single interacti
 
 * Custom state machine visualization
 * Clickable states to jump to real data examples
-* Shows:
+* Displays:
 
   * State frequency
   * Average speed
@@ -75,7 +77,7 @@ project/
 
 ## 📂 Data Input
 
-The application supports two types of CSV formats:
+The application supports multiple CSV formats:
 
 ### 1. Raw Tick Data
 
@@ -95,7 +97,7 @@ Required columns:
 
 ### 3. Hybrid (Recommended)
 
-Includes both raw + labeled fields for best accuracy.
+Includes both raw + labeled fields for maximum accuracy and synchronization.
 
 ---
 
@@ -142,15 +144,19 @@ python main.py --smoke-test
 
 ### 1. State Encoding
 
-Each price movement is converted into a **3-value comparison tuple**, then mapped into one of 13 states.
+Each price movement is converted into a **3-value comparison tuple**, then mapped into one of 13 predefined states representing market behavior.
+
+---
 
 ### 2. Regime Classification
 
-Tick speed determines regime:
+Tick speed determines the market regime:
 
-* EARLY → fast market
-* CLOCK → stable timing
-* LATE → slow market
+* EARLY → fast/accelerated market
+* CLOCK → stable/normal timing
+* LATE → slow/delayed market
+
+---
 
 ### 3. Transition Modeling
 
@@ -158,22 +164,26 @@ The system tracks:
 
 * Frequency of each state
 * Probabilities of transitions between states
+* Dominant behavioral patterns
+
+---
 
 ### 4. Visualization Engine
 
 Custom rendering using PyQt6:
 
 * No external plotting libraries
-* Fully synchronized multi-panel display
+* Fully synchronized multi-panel interface
+* Real-time interaction with data
 
 ---
 
 ## 📊 Example Insights
 
-* Identify dominant market regimes per state
+* Identify dominant OTC market regimes
 * Detect recurring transition patterns
-* Analyze volatility through tick speed
-* Explore clustering of similar behaviors
+* Analyze volatility using tick speed
+* Explore clustering of market behaviors
 
 ---
 
@@ -188,9 +198,9 @@ Custom rendering using PyQt6:
 
 ## 🎯 Use Cases
 
+* OTC market analysis
 * Financial data exploration
-* Quantitative analysis experiments
-* Market behavior modeling
+* Quantitative modeling experiments
 * Data visualization portfolio project
 
 ---
@@ -200,13 +210,13 @@ Custom rendering using PyQt6:
 * No predictive model (yet)
 * No backtesting engine
 * Depends on input data quality
-* Designed for exploration, not trading execution
+* Designed for analysis, not live trading execution
 
 ---
 
 ## 🚧 Future Improvements
 
-* Add prediction layer (next state forecasting)
+* Add prediction layer (next-state forecasting)
 * Export analytics results to CSV
 * Integrate machine learning models
 * Add real-time data streaming
@@ -217,6 +227,7 @@ Custom rendering using PyQt6:
 ## 📸 Screenshots
 
 ### 🖥 Main Dashboard
+
 ![Main UI](Capture3.PNG)
 
 ---
@@ -225,3 +236,9 @@ Custom rendering using PyQt6:
 
 Gerges Elkes
 GitHub: https://github.com/GergesElkes
+
+---
+
+## 💡 Note
+
+This project focuses on **OTC (Over-The-Counter) market behavior**, which may differ significantly from live exchange markets in terms of liquidity, timing, and price dynamics.
